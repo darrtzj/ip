@@ -8,8 +8,6 @@ import java.time.format.DateTimeFormatter;
  */
 public class Event extends Task {
     private LocalDate date;
-    public static final String TASK_TYPE = "E";
-    public static final String CONNECTOR = "at";
 
     /**
      * Constructs an event task.
@@ -41,7 +39,7 @@ public class Event extends Task {
      */
     @Override
     public String toString() {
-        return "[" + Event.TASK_TYPE + "]" + super.toString() + " (at: " + this.date.format(DateTimeFormatter
-                .ofPattern(Task.LOAD_DATE_FORMAT)) + ")";
+        return "[E]" + super.toString() + " (at: " + this.date.format(DateTimeFormatter
+                .ofPattern("MMM dd yyyy")) + ")";
     }
 }

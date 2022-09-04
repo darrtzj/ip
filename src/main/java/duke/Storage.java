@@ -15,9 +15,6 @@ public class Storage {
     private File file;
     private String directoryPath;
     private String filePath;
-    private static final String FILE_NOT_FOUND_MESSAGE = "File could not be found";
-    private static final String FILE_NOT_SAVED_MESSAGE = "File could not be saved";
-    private static final String FILE_NOT_CREATED_MESSAGE = "File could not be created";
 
     /**
      * Constructs storage.
@@ -51,7 +48,7 @@ public class Storage {
             }
             return data.toString();
         } catch (FileNotFoundException e) {
-            throw new DukeException(FILE_NOT_FOUND_MESSAGE);
+            throw new DukeException("File could not be found");
         }
     }
 
@@ -67,7 +64,7 @@ public class Storage {
             fileWriter.write(data);
             fileWriter.close();
         } catch (IOException e) {
-            throw new DukeException(FILE_NOT_SAVED_MESSAGE);
+            throw new DukeException("File could not be saved");
         }
     }
 
@@ -82,7 +79,7 @@ public class Storage {
             newDirectory.mkdirs();
             file.createNewFile();
         } catch (IOException e) {
-            throw new DukeException(FILE_NOT_CREATED_MESSAGE);
+            throw new DukeException("File could not be created");
         }
     }
 }

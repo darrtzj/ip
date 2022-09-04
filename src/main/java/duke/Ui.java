@@ -20,10 +20,6 @@ public class Ui {
 
     private Scanner sc = new Scanner(System.in);
 
-    private static String taskLeftMessage(TaskList tasks) {
-        return "Now you have " + tasks.size() + " tasks in the list.";
-    }
-
     /**
      * Returns greeting message.
      *
@@ -60,7 +56,7 @@ public class Ui {
      * @return add task message.
      */
     public String addTaskMessage(Task task, TaskList tasks) {
-        return ADD_MESSAGE + "\n" + task.toString() + "\n" + taskLeftMessage(tasks);
+        return ADD_MESSAGE + "\n" + task.toString() + "\n" + "Now you have " + tasks.size() + " tasks in the list.";
     }
 
     /**
@@ -86,7 +82,7 @@ public class Ui {
      * @return delete task message.
      */
     public String deleteTaskMessage(Task task, TaskList tasks) {
-        return DELETE_MESSAGE + "\n" + task.toString() + "\n" + taskLeftMessage(tasks);
+        return DELETE_MESSAGE + "\n" + task.toString() + "\n" + "Now you have " + tasks.size() + " tasks in the list.";
     }
 
     /**

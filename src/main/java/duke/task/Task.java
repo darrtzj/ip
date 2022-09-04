@@ -8,10 +8,6 @@ import duke.DukeException;
 public class Task {
 
     private static final String ALREADY = "This task is already marked as ";
-    public static final String LOAD_DATE_FORMAT = "MMM dd yyyy";
-    public static final String SAVE_DATE_FORMAT = "yyyy-mm-dd";
-    private static final String MARK_DONE_MARKER = "X";
-    private static final String MARK_UNDONE_MARKER = " ";
     private final String taskDescription;
     private boolean isDone;
 
@@ -78,9 +74,9 @@ public class Task {
     public String toString() {
         String marker;
         if (this.isDone) {
-            marker = MARK_DONE_MARKER;
+            marker = "X";
         } else {
-            marker = MARK_UNDONE_MARKER;
+            marker = " ";
         }
         return "[" + marker + "] " + this.taskDescription;
     }
